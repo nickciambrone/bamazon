@@ -71,18 +71,55 @@ function viewProducts(){
             var amountOfSpaces=14-results[i].item_name.length
             for(var x=0;x<amountOfSpaces;x++){
                 spaces.push(" ")
+                
             }
-            // var mike = results[i].quantity.toString()
-            // var amountAtEnd=5-mike.length
-            // for (var x=0;x<amountAtEnd;i++){
-            //     spacesEnd.push(" ")
-            // }
-            console.log('\n-------------------------------------------------------------------------------------------------------')
-            console.log("| Item id: "+results[i].item_id+" | "+"Item Name: "+results[i].item_name+spaces.join("")+"| "+"Price: "+results[i].price+" | "+"Quantity: "+results[i].quantity+" |")
-            spaces=[];
-            spacesEnd=[];
+        }
+        for (var i=0; i<results.length;i++){
+            var str=results[i].quantity.toString()
+            var amountOfSpaces=5-str.length
+            for (var x=0; i<amountOfSpaces;i++){
+                spacesEnd.push(" ")
+                
+            }
+            
 
         }
+        
+        
+           
+            console.log('\n----------------------------------------------------------------------------------------------')
+            for (var i=0;i<results.length;i++){
+                var spacesLength=32-results[i].item_name.length
+                var stringy=results[i].price.toString()
+                var stringyy=results[i].quantity.toString()
+                var spacesAfterQuantitiyLength=7-stringyy.length
+                var spacesAfterPriceLength=5-stringy.length
+            var spacesAfterName=[];
+            var spacesAfterPrice=[];
+            var spacesAfterQuant=[];
+            for (var x=0;x<spacesLength;x++){
+                spacesAfterName.push(" ")
+            }
+            for (var y=0;y<spacesAfterPriceLength;y++){
+                spacesAfterPrice.push(" ")
+            }
+            for (var z=0;z<spacesAfterQuantitiyLength;z++){
+                spacesAfterQuant.push(" ")
+            }
+           
+         
+            console.log("| Item id: "+results[i].item_id+" | "+"Item Name: "+results[i].item_name+spacesAfterName.join("")+"| "+"Price: "+results[i].price+spacesAfterPrice.join("")+" | "+"Quantity: "+results[i].quantity+spacesAfterQuant.join("")+"|")
+            spacesAfterName=[];
+            spacesAfterPrice=[];
+            spacesAfterQuant=[];
+            }
+           
+           spaces=[];
+           
+            
+           console.log('----------------------------------------------------------------------------------------------')
+
+        
         
     })
     start()
@@ -180,3 +217,11 @@ function addToInventory() {
     })
 
 }
+function createArray(){
+  var spacesEnd=[]
+            var amountAtEnd=5-2
+            for (var x=0;x<amountAtEnd;x++){
+                spacesEnd.push(" ")
+            }
+}
+createArray()
